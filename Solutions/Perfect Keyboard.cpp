@@ -1,3 +1,7 @@
+// Problem link: https://codeforces.com/contest/1303/problem/C?mobile=false
+// user : zoro500 
+
+
 #include <bits/stdc++.h>
 
 #define ll long long
