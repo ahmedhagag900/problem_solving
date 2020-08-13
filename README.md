@@ -1,2 +1,3 @@
-# problem_solving
-This repository contains solutions of codeforces problems i've solved
+# CodeForces
+This repository contains my solutions to Codeforces problems. 
+These solutions are provided "as is" - I give no guarantees that they will work as expected.
