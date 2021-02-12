@@ -1,4 +1,7 @@
-﻿using System.Text;
+//Problem Link: https://codeforces.com/contest/1375/problem/B
+//Handel: zoro500
+
+using System.Text;
 using System;
 using System.Collections;
 
