@@ -14,6 +14,7 @@ namespace codeforces
         {
             return (i < n && i >= 0 && j < m && j >= 0);
         }
+        
         private static int Count_Neighbours(int i,int j, int[,] grid){
             int num_of_neighbours=0;
             int n=grid.GetLength(0);
@@ -51,23 +52,27 @@ namespace codeforces
 
         static void Main(string[] args)
         {
+            //read number of testcases
             int tc=Int32.Parse(Console.ReadLine());
+            
             for(int idx=0;idx<tc ;++idx){
-
+                
+                //read the dimensions of the grid 
                 string[] n_m = Console.ReadLine().Split(new char[0],StringSplitOptions.RemoveEmptyEntries);
                 int n = Int32.Parse(n_m[0]);
                 int m = Int32.Parse(n_m[1]);
                 
                 int[,] grid=new int[n,m];
-
+                
+                //read the grid
                 for(int i=0;i<n;++i){
                     string[] line = Console.ReadLine().Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
                     for(int j=0;j<m;++j){
                         grid[i, j] = Int32.Parse(line[j]);
                     }
                 }
-
-
+            
+                //checking if num of neighbours less than the cell value and assigning them a value 
                 for (int i=0;i<n;++i){
                     for(int j=0;j<m;++j){
                         if (grid[i, j] == 0) continue; 
@@ -76,6 +81,8 @@ namespace codeforces
                             AssignNeighoubers(i, j, grid[i, j], grid);
                     }
                 }
+                
+                //checking if num of neighbors is greater than the cell value and assigning the difference  
                 for (int i = 0; i < n; ++i)
                 {
                     for (int j = 0; j < m; ++j)
@@ -86,7 +93,8 @@ namespace codeforces
                             grid[i, j] += (num_of_neighnours - grid[i, j]);
                     }
                 }
-
+                
+                //validating the grid cells
                 bool ok=true;
                 for(int i=0;i<n&&ok;++i){
                     for(int j=0;j<m&&ok;++j){
@@ -95,7 +103,8 @@ namespace codeforces
                             ok=false;
                     }
                 }
-
+                
+                //printing The answer 
                 if(ok){
                     Console.WriteLine("YES");
                     for(int i=0;i<n;++i){
